@@ -21,3 +21,6 @@ class PostService:
             new_post = Post(**post)
             self.post_dao.add_post(new_post)
         return ""
+
+    def delete_post(self, post_id):
+        return self.post_dao.delete_post(post_id)

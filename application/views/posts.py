@@ -1,4 +1,4 @@
-from flask import request, jsonify
+from flask import request
 from flask_restx import Resource, Namespace
 
 from application.dao.models.models import PostSchema, CommentSchema
@@ -36,5 +36,9 @@ class PostView(Resource):
         if not post:
             return 'post not found', 404
         return {'post': post, 'comments': comments, 'comments_count': len(comments)}, 200
+
+    @staticmethod
+    def delete(post_id):
+        return post_service.delete_post(post_id), 204
 
 

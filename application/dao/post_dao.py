@@ -17,3 +17,9 @@ class PostDAO:
     def add_post(self, new_post):
         self.session.add(new_post)
         self.session.commit()
+
+    def delete_post(self, post_id):
+        post = self.session.query(Post).filter(Post.id == post_id).first()
+        self.session.delete(post)
+        self.session.commit()
+        return ''
