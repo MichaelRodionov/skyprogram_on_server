@@ -1,7 +1,15 @@
 name: skyprogram workflow
 on: [push]
 jobs:
-
+  flake8_py3:
+    runs-on: ubuntu-latest
+    steps:
+      name: run flake8
+      uses: suo/flake8-github-action@releases/v1
+      with:
+        chekName: 'flake8_py3'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GHUB_TOKEN }}
   build_and_push:
     runs-on: ubuntu-latest
     steps:
