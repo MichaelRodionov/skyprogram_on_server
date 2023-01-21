@@ -29,5 +29,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           source: "skyprogram_deploy/docker-compose.yaml"
-          target: "flask_app_ci"
+          target: "skyprogram_app_ci"
           strip_components: 1
