@@ -12,9 +12,9 @@ class PostDAO:
 
     def get_one_post(self, post_id):
         return self.session.query(Post.pic, Post.poster_name, Post.
-                                  poster_avatar, Post.content, Post.views_count,
-                                  Post.likes_count).filter(Post.id == post_id).\
-            first()
+                                  poster_avatar, Post.content, Post.
+                                  views_count, Post.likes_count).\
+            filter(Post.id == post_id).first()
 
     def add_post(self, new_post):
         self.session.add(new_post)
