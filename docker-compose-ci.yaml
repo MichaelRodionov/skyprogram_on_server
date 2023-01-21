@@ -1,0 +1,7 @@
+version: "3.10"
+
+services:
+  app:
+    image: michaelrodionov/skyprogram_on_server:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+    ports:
+      - 80:80
