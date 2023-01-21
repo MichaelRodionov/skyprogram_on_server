@@ -1,0 +1,9 @@
+version: "3.10"
+
+services:
+  app:
+    build:
+      context: .
+    image: michaelrodionov/skyprogram_on_server
+    ports:
+      - 80:80

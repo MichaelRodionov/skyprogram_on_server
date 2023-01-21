@@ -46,4 +46,4 @@ application = create_app(Config())
 
 
 if __name__ == '__main__':
-    application.run(port=5050)
+    application.run()
