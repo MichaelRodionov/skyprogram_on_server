@@ -1,5 +1,3 @@
-from flask import request
-
 from application.dao.post_dao import PostDAO
 from application.dao.models.models import Post
 

@@ -13,7 +13,8 @@ class BookmarkDAO:
         self.session.commit()
 
     def delete_bookmark(self, post_id):
-        bookmark = self.session.query(Bookmark).filter(post_id == Bookmark.post_id).first()
+        bookmark = self.session.query(Bookmark).\
+            filter(post_id == Bookmark.post_id).first()
         self.session.delete(bookmark)
         self.session.commit()
         return ""

@@ -35,10 +35,9 @@ class PostView(Resource):
         comments = comments_schema.dump(comment_service.get_comments(post_id))
         if not post:
             return 'post not found', 404
-        return {'post': post, 'comments': comments, 'comments_count': len(comments)}, 200
+        return {'post': post, 'comments': comments,
+                'comments_count': len(comments)}, 200
 
     @staticmethod
     def delete(post_id):
         return post_service.delete_post(post_id), 204
-
-
