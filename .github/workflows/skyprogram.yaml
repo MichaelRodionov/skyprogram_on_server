@@ -1,11 +1,7 @@
 name: skyprogram workflow
 on: [push]
 jobs:
-  lint_app:
-    uses: actions/checkout@v1
-    with:
-      use-flake8: false
-      extra-flake8-options: ""
+
   build_and_push:
     runs-on: ubuntu-latest
     steps:
