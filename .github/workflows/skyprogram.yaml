@@ -1,17 +1,13 @@
 name: skyprogram workflow
 on: [push]
 jobs:
-  clone and check:
+  build_and_push:
     runs-on: ubuntu-latest
     steps:
       - name: clone code
         uses: actions/checkout@v2
       - name: flake8 check
         uses: py-actions/flake8@v2
-  build_and_push:
-    runs-on: ubuntu-latest
-    needs: clone and check
-    steps:
       - name: docker build
         run: docker build -t michaelrodionov/skyprogram_on_server:$GITHUB_REF_NAME-$GITHUB_RUN_ID .
       - name: docker login
